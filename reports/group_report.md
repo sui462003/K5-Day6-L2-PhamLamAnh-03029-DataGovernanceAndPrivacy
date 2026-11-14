@@ -131,13 +131,13 @@
 - **Failure case 2 (Nhiễu nhãn `unknown`)**:
   - `clip_093` có nhãn `route=urban, weather=fog, light=unknown, object=pedestrian`.
   - *Root cause*: Cảm biến ánh sáng bị chập chờn khi thu thập.
-  - *Giải pháp*: Đưa `clip_093` vào top review queue ([review_queue.csv](file:///D:/K5-Day6-L2-NguyenVietTien-03140-DataGovernanceAndPrivacy/out/poc/review_queue.csv)) để reviewer đối chiếu video gốc; nếu xác nhận `light == night`, clip này sẽ phủ được `C13`.
+  - *Giải pháp*: Đưa `clip_093` vào top review queue (`out/poc/review_queue.csv`) để reviewer đối chiếu video gốc; nếu xác nhận `light == night`, clip này sẽ phủ được `C13`.
 
 ---
 
 ## 07 · Human & decision
 
-- **Review queue**: [out/poc/review_queue.csv](file:///D:/K5-Day6-L2-NguyenVietTien-03140-DataGovernanceAndPrivacy/out/poc/review_queue.csv) (Budget $B=20$), ưu tiên:
+- **Review queue**: `out/poc/review_queue.csv` (Budget $B=20$), ưu tiên:
   1. Các clip phủ ô hiếm `is_hard == 1` (`clip_115`, `clip_098`, `clip_108`, `clip_101`).
   2. Các clip có tag `unknown` có thể giải cứu các ô thiếu (`clip_093`, `clip_082`, `clip_110`).
 - **Quyết định Quản trị**:
